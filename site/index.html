@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet CoWorker: a proposed local AI workspace for the Atea Local AI Hackathon. Prepare online. Keep creating offline. Explore the interactive concept demo.">
+  <meta name="theme-color" content="#173d35">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; worker-src 'self'">
+  <title>CoWorker — Great work. Anywhere.</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="CoWorker home"><span class="brand-mark" aria-hidden="true">c<span>o</span></span>CoWorker<span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation"><a href="#idea">The idea</a><a href="#journey">How it works</a><a href="#value">The potential</a></nav>
+    <a class="button small dark" href="#demo">Try the demo <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="idea">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> ATEA LOCAL AI HACKATHON <span class="edition">/ CONCEPT 01</span></p>
+        <h1>Great work.<br>No connection<br><em>required.</em></h1>
+        <p class="hero-description">Your project knowledge. A local AI. One workspace.<br>Prepare while you’re connected. Keep creating when you’re not.</p>
+        <div class="hero-actions"><a class="button dark" href="#demo">Step inside CoWorker <span aria-hidden="true">↗</span></a><button class="text-button" data-action="tour">Watch the walkthrough <span aria-hidden="true">▷</span></button></div>
+        <div class="hero-footnote"><span class="mini-icon" aria-hidden="true">↳</span><span>A proposed Windows app. Explore the idea in this browser demo.</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Animated illustration of preparing a project, working offline, and creating a draft">
+        <div class="visual-caption"><span>FROM KNOWLEDGE TO DONE</span><button id="motion-toggle" class="icon-button" aria-label="Pause animation" data-action="motion">Ⅱ</button></div>
+        <div class="mini-window">
+          <div class="window-bar"><span class="window-dots" aria-hidden="true">● ● ●</span><span>your workspace, wherever</span><span aria-hidden="true">↗</span></div>
+          <div class="mini-project"><span class="project-icon" aria-hidden="true">N</span><div><strong>Northstar workshop</strong><small>Everything you need. Along for the ride.</small></div></div>
+          <div class="hero-stage" id="hero-stage"></div>
+          <div class="mini-bottom"><span><span class="status-dot"></span> Local-first by design</span><span>Illustrated workflow</span></div>
+        </div>
+        <div class="floating-note"><span aria-hidden="true">✳</span><div><strong>Less searching.<br>More making.</strong><small>Meet your new CoWorker.</small></div></div>
+        <div class="hero-stages" aria-label="Animation steps"><button data-hero="0" class="active">01 <span>Prepare</span></button><button data-hero="1">02 <span>Disconnect</span></button><button data-hero="2">03 <span>Create</span></button></div>
+      </div>
+    </section>
+    <div class="principles wrap"><span><b aria-hidden="true">◎</b> AI on your machine</span><span><b aria-hidden="true">▤</b> Answers with sources</span><span><b aria-hidden="true">↗</b> Work you can take with you</span><span><b aria-hidden="true">⊞</b> Built around your project</span></div>
+    <section class="journey section wrap" id="journey">
+      <div class="section-heading"><div><p class="eyebrow">THE BIG IDEA</p><h2>Prepare once.<br>Take your momentum with you.</h2></div><p>Imagine a consultant leaving for a customer workshop. The Wi-Fi disappears. Their ability to work shouldn’t.</p></div>
+      <div class="journey-grid">
+        <article><div class="step-line"><span>01 / BEFORE YOU GO</span><span aria-hidden="true">↗</span></div><h3>Pack the right knowledge.</h3><p>Choose your task and approved sources. CoWorker proposes the useful documents, explains why, and lets you review the pack.</p><div class="journey-chips"><span>Selected SharePoint folders</span><span>Local files</span></div></article>
+        <article><div class="step-line"><span>02 / ON YOUR OWN TERMS</span><span aria-hidden="true">◎</span></div><h3>Switch off the connection.</h3><p>Ask questions about your captured sources. Follow citations. Save an idea. Local AI is designed to keep the project moving.</p><div class="journey-chips"><span>Offline Lock</span><span>Local references</span></div></article>
+        <article><div class="step-line"><span>03 / ARRIVE WITH SOMETHING</span><span aria-hidden="true">✳</span></div><h3>Turn knowledge into work.</h3><p>Draft a Word document or an editable slide deck. Review changes on working copies. Refresh sources explicitly when you reconnect.</p><div class="journey-chips"><span>Review before applying</span><span>Keep originals</span></div></article>
+      </div>
+    </section>
+    <section class="demo-section" id="demo">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">LESS EXPLAINING. MORE EXPLORING.</p><h2>Your next workspace,<br><em>in miniature.</em></h2></div><div><p>Try the full story with a fictional project.<br>No account. No setup. No company data.</p><button class="text-button" data-action="tour">Take the guided tour <span aria-hidden="true">↗</span></button></div></div>
+        <div class="demo-disclosure"><span class="badge">INTERACTIVE CONCEPT</span><p>Scripted AI and simulated integrations. Your edits stay in this browser. No model, Microsoft connection, or real code execution.</p></div>
+        <div class="app-shell">
+          <aside class="sidebar"><div class="app-brand"><span class="brand-mark" aria-hidden="true">c<span>o</span></span><strong>CoWorker</strong></div><div class="workspace-label">WORKSPACE <span>01</span></div><nav id="workspace-nav" aria-label="Demo workspace"></nav><div class="sidebar-bottom"><div class="local-model"><span class="status-dot"></span><div><strong id="sidebar-profile">Balanced profile</strong><small>Proposed local runtime</small></div></div><button class="text-button" data-action="reset">↺ Reset demo</button></div></aside>
+          <div class="app-main"><header class="app-header"><div><small>PROJECT / SYNTHETIC EXAMPLE</small><strong>Northstar workshop <span class="muted">⌄</span></strong></div><button id="offline-toggle" class="connection-toggle" role="switch" aria-checked="false" data-action="offline"><span class="status-dot"></span><span id="connection-label">Online mode</span><span class="switch-track"><span></span></span></button></header><div id="pack-strip" class="pack-strip"></div><div id="workspace" tabindex="-1"></div><footer class="app-footer"><span><span class="status-dot"></span> Browser demo · synthetic data only</span><span id="save-state" role="status">Saved on this device</span></footer></div>
+        </div>
+        <p class="demo-under"><span>Go ahead. Click things. It’s your workspace.</span><span id="cache-state">Loading the demo assets…</span></p>
+      </div>
+    </section>
+    <section class="section wrap" id="possibilities"><div class="section-heading"><div><p class="eyebrow">A USEFUL COLLEAGUE, BY DESIGN</p><h2>More than an answer.<br>A next step.</h2></div><p>Start with focused project work. Extend carefully into tools that make a working day easier.</p></div><div class="feature-grid">
+      <article class="feature feature-peach"><span class="feature-symbol" aria-hidden="true">⌘</span><p class="eyebrow">PROPOSED EXTENSION</p><h3>A coding agent.<br>With boundaries.</h3><p>A separate, disposable workspace. Reviewable file changes. Network access only for an approved task, and never through Offline Lock.</p><button class="text-button" data-open-tab="code">Explore the safety flow <span aria-hidden="true">↗</span></button></article>
+      <article class="feature feature-green"><span class="feature-symbol" aria-hidden="true">≋</span><p class="eyebrow">MADE TO ADAPT</p><h3>Your computer.<br>Your pace.</h3><p>Light, Balanced, and Performance profiles express the hardware ambition. Advanced controls expose context, resources, and network policy.</p><button class="text-button" data-open-tab="settings">Try the profiles <span aria-hidden="true">↗</span></button></article>
+      <article class="feature feature-neutral"><span class="feature-symbol" aria-hidden="true">⌁</span><p class="eyebrow">TRUST THROUGH CLARITY</p><h3>Know the source.<br>Keep the choice.</h3><p>Captured versions, visible gaps, changes you approve. Your project stays scoped, and your original documents stay untouched.</p><button class="text-button" data-open-tab="sources">See the source pack <span aria-hidden="true">↗</span></button></article>
+    </div><p class="fine-print">These are product design goals. Hardware performance, Windows isolation, encrypted storage, and Microsoft permissions need implementation and validation.</p></section>
+    <section class="value-section" id="value"><div class="wrap value-grid"><div><p class="eyebrow">THE BUSINESS HYPOTHESIS</p><h2>Keep the value.<br>Rethink the<br><em>recurring cost.</em></h2><p>For suitable project tasks, CoWorker could reduce reliance on paid cloud assistants. The opportunity is worth testing—not assuming.</p><p class="value-small">Use your own costs. The example below is illustrative, not Microsoft pricing or a savings forecast. Replaced tasks only reduce spend if paid seats can actually be removed.</p></div><div class="calculator"><div class="calculator-heading"><h3>What could that look like?</h3><span>ILLUSTRATIVE / NOK</span></div><label for="seats">Paid assistant seats <output id="seats-value">100</output></label><input id="seats" type="range" min="10" max="1000" step="10" value="100"><label for="replacement">Seats potentially removed <output id="replacement-value">30%</output></label><input id="replacement" type="range" min="0" max="100" step="5" value="30"><div class="cost-inputs"><label>Monthly cost per seat, NOK<input id="seat-cost" type="number" min="0" max="100000" value="300"></label><label>Annual rollout & support, NOK<input id="support-cost" type="number" min="0" max="100000000" value="12000"></label></div><div class="calculation"><span>Illustrative annual net reduction</span><strong id="saving">96,000 <small>NOK</small></strong><p id="calculation-detail">30 seats × 300 NOK × 12 months − 12,000 NOK</p></div><p class="calculator-note">Include hardware, model evaluation, maintenance, and support in your own estimate. This demo proves no savings or productivity gains.</p></div></div></section>
+    <section class="section wrap boundaries"><div><p class="eyebrow">AN HONEST STARTING POINT</p><h2>A focused alternative.<br>Room to prove it.</h2></div><div><details open><summary>Does this replace Microsoft 365 or all of Copilot?</summary><p>No. The idea is to handle a useful subset of project knowledge, drafting, and editing locally. Microsoft 365 remains the source of truth. Live collaboration, email, meetings, and broader Copilot capabilities are outside this concept demo.</p></details><details><summary>Does the browser demo run an AI model?</summary><p>No. It uses clearly labelled, scripted responses and fictional sources. The proposed desktop app would run generation and retrieval locally. This website demonstrates the workflow, not inference quality.</p></details><details><summary>Can it really run on a low-end computer?</summary><p>That is a design target. Smaller local models, bounded context, and one task at a time may make modest hardware practical. Minimum requirements and useful performance must be measured on real machines before making a promise.</p></details><details><summary>How would the coding agent be kept safe?</summary><p>The proposal uses OS-enforced isolation, a disposable project directory, bounded resources, reviewable patches, and explicit network grants. A folder or a prompt alone is not a sandbox. This demo executes no code and proves no security boundary.</p></details><details><summary>What happens to information in this demo?</summary><p>Only fictional source fixtures are supplied. Notes, drafts, and settings are stored unencrypted in this browser’s local storage, with no application backend or analytics. Do not enter company information. Reset demo removes that state; browser controls can also remove cached site assets. The host receives ordinary website requests.</p></details></div></section>
+    <section class="closing wrap"><p class="eyebrow">READY WHEN YOU ARE</p><h2>Your knowledge.<br><em>Your CoWorker.</em></h2><a class="button dark" href="#demo">Explore the demo <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#">CoWorker<span class="brand-dot">.</span></a><p>An idea for the Atea Local AI Hackathon.<br>Concept by Vegard · Not an official Atea product.</p><a href="https://github.com/grubbiy/AteaCoWorker">View the project ↗</a></footer>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div><button class="dialog-close icon-button" aria-label="Close dialog" data-action="close-dialog">×</button></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Enable JavaScript to use the interactive demo. The concept overview remains available above.</p></noscript>
+</body>
+</html>

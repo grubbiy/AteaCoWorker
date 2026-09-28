@@ -1,0 +1,14 @@
+{
+  "name": "ateacoworker-concept",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CoWorker Atea Local AI Hackathon concept and interactive static demo",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/model.test.mjs tests/site.test.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "engines": {"node": ">=22"},
+  "devDependencies": {"playwright": "1.62.1"}
+}
