@@ -1,0 +1,42 @@
+{
+  "url": "https://grubbiy.github.io/AteaCoWorker/",
+  "deployment": "https://github.com/grubbiy/AteaCoWorker/actions/runs/36361826737",
+  "checks": [
+    {
+      "asset": "index.html",
+      "bytes": 13965,
+      "sha256": "a23670f80267fa7d53ddb86b7c8a71e5475e988eb7c300a73a7e7a091fee05db",
+      "matched": true
+    },
+    {
+      "asset": "style.css",
+      "bytes": 39445,
+      "sha256": "6d534c8c37cc79a6ccab6c35616e7e0bf4c97b2ea6995e83ae27769e1b481eed",
+      "matched": true
+    },
+    {
+      "asset": "app.js",
+      "bytes": 38160,
+      "sha256": "890e245cb02c5fae51d15c017a4e27eb847d4229756e5ccfd67bcc98dcb163a1",
+      "matched": true
+    },
+    {
+      "asset": "model.js",
+      "bytes": 8852,
+      "sha256": "edae2cff6542e3ca587df7833ec3f97ab8ebc86e2c46c3fa9c23ef48c8034dff",
+      "matched": true
+    },
+    {
+      "asset": "sw.js",
+      "bytes": 816,
+      "sha256": "5c7b2c4f5ef39b914c4e73d9efacaff3d1282b9181c812a467ebf47f861d2582",
+      "matched": true
+    },
+    {
+      "asset": "favicon.svg",
+      "bytes": 247,
+      "sha256": "aaf1dd0f435be865eef3ccc1e452064de7c99118550b656b4f9b223c7f9007c4",
+      "matched": true
+    }
+  ]
+}

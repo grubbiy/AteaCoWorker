@@ -10,7 +10,7 @@ Prepare the right project knowledge while online. Keep asking questions, taking 
 
 **[Try the demo](https://grubbiy.github.io/AteaCoWorker/)** · **[3-minute presenter guide](docs/demo.md)** · **[What actually works](docs/status.md)** · **[Publishing setup](docs/github-pages.md)**
 
-The demo link is the intended GitHub Pages address; see the status report for publication verification. Repository access and website publication are separate.
+**Live on GitHub Pages.** The repository remains private; the concept website is public and contains only synthetic data. [Successful deployment](https://github.com/grubbiy/AteaCoWorker/actions/runs/36361826737).
 
 ![The CoWorker concept website](docs/images/website.webp)
 
@@ -112,7 +112,8 @@ Browser tests save evidence under the ignored `artifacts/` directory. Linux may 
 | `specification/` | All five original supplied files, preserved unchanged for future implementation. |
 | `tests/` | State, citations, arithmetic, static assets, and browser journey checks. |
 | `scripts/serve.mjs` | Small local-only static server. |
-| `.github/workflows/pages.yml` | Check and deploy only `site/` to GitHub Pages. |
+| `.github/workflows/checks.yml` | Validate source changes on main and pull requests. |
+| `gh-pages` branch | Published snapshot containing only the website assets at its root. |
 
 ## Before building the actual application
 

@@ -1,33 +1,41 @@
 # GitHub Pages publishing
 
-The intended public-safe concept URL is **https://grubbiy.github.io/AteaCoWorker/**. Do not treat it as live until `docs/status.md` records a successful deployment and HTTP verification.
+**Live website: https://grubbiy.github.io/AteaCoWorker/**
 
-## Recommended: GitHub Actions
+**Current source: `gh-pages` branch, `/(root)`.** GitHub's native Pages build and deployment publishes this branch. It contains only the static website assets copied from `site/` on main.
 
-1. Open the repository's **Settings → Pages**.
-2. Under **Build and deployment → Source**, select **GitHub Actions**.
-3. Open **Actions → Deploy CoWorker demo → Run workflow**, selecting `main` if a deployment did not already start.
-4. Wait for the deploy job to complete, then open the URL shown in its `github-pages` environment.
+[Verified deployment](https://github.com/grubbiy/AteaCoWorker/actions/runs/36361826737) · [Live asset integrity report](evidence/live-assets.json)
 
-The workflow runs deterministic checks and uploads **only `site/`**. No desktop specifications, test results, secrets, or repository documentation are included in that website artifact. Future changes to `site/` trigger a fresh deployment. Static assets require no build or runtime package installation.
+## What was configured
 
-## Private repository consideration
+Initially GitHub reported Pages disabled. The first custom deployment workflow could not publish. Creating the dedicated `gh-pages` branch triggered GitHub's native Pages enablement and successful publication, without changing repository visibility or purchasing services.
 
-GitHub documents Pages availability for private repositories on supported paid plans such as GitHub Pro. If Settings says the account must upgrade, the owner must choose whether to do so; this task does not authorize purchasing a subscription or making the repository public.
+The redundant custom deployment workflow was replaced by `.github/workflows/checks.yml`, which runs syntax and deterministic tests for changes on main and pull requests. Native Pages deployment is a separate workflow maintained by GitHub.
 
-A private repository does not, by itself, make the published Pages site private. This demonstration contains fictional data and no official company assets. Treat the site as public unless explicit Pages access control has been configured and verified.
+## Publishing an update
 
-## Alternate branch publishing
+1. Edit `site/` on main and bump the cache version in `site/sw.js` for a site release.
+2. Run the tests and inspect changed user flows.
+3. Update the root of `gh-pages` to contain exactly the contents of `site/`, preserving `.nojekyll`.
+4. Commit that branch with an authorized repository connection. Do not push the entire main repository tree onto it.
+5. Wait for **Actions → pages build and deployment** to succeed.
+6. Open the live website and verify the changed assets. A main-only commit does not publish website updates.
 
-If using a `gh-pages` deployment branch containing only the contents of `site/`, choose **Deploy from a branch → gh-pages → /(root)**. Do not point a branch deployment at the entire main repository root, and do not set the documentation folder as the site: the interactive assets are under `site/` in main.
+Do not assume a workflow push using the default `GITHUB_TOKEN` will trigger a separate branch-based Pages build; GitHub documents restrictions on workflow-triggered builds. The source branch can instead be updated through the authorized repository connection used for this delivery.
 
-## Constraints in this session
+If the configuration is later removed, open **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, then **gh-pages** and **/(root)**. The main branch root is not the website.
 
-The GitHub connection exposes file, branch, commit, and workflow-inspection operations but no Pages settings mutation. A complete, tested site and deployment configuration can therefore be committed before any owner-side setup is needed. Do not try to grant an Actions token repository-admin rights to work around that limit.
+## Visibility
 
-## Local verification
+The repository remains **private**. The published concept website is **public**. A private source repository does not automatically give the Pages site private access controls. Only fictional data and public-safe concept content are published; repository documentation and original specifications are not included in the website assets.
 
-`npm run dev` serves the same files under `/AteaCoWorker/` so relative URLs are checked before publication. To update a previously cached deployment, change the static cache version in `site/sw.js` with each site release. A hard refresh or clearing site data can help a tester discard an older cache; the service worker also checks its own updates normally.
+GitHub documents private-repository Pages availability on supported plans such as GitHub Pro. No subscription purchase or repository visibility change was made or authorized in this task.
+
+## Offline cache and local preview
+
+`npm run dev` serves the same assets under `/AteaCoWorker/`, matching the live site's path prefix. Once cached by the service worker, they can reopen offline in the tested Chromium browser. A hard refresh or clearing site data helps a tester discard an older cache when needed. Change the cache version with each new site release.
+
+The service worker caches only same-origin static assets, not remote documents or model weights. The website's offline test does not validate the future Windows app's offline contract.
 
 Official references checked 2026-09-28:
 

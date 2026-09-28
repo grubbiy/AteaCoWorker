@@ -31,7 +31,8 @@
 | Third-party requests | None observed in browser journey | Report has an empty external-request list. |
 | Responsive overflow | Passed at 390, 768, 1440 px | Overview and five content surfaces tested; desktop/mobile captures inspected. |
 | Visual inspection | Passed with one corrected hero spacing issue | Screenshots of desktop page, mobile page, workspace, and mobile workspace; captured preview in `docs/images/`. |
-| GitHub Pages live deployment | Pending publication verification | See publishing section below. |
+| GitHub Pages live deployment | Passed | [Native Pages run 36361826737](https://github.com/grubbiy/AteaCoWorker/actions/runs/36361826737): build and deploy succeeded. Live address returns HTTP 200. |
+| Published asset integrity | Passed | `docs/evidence/live-assets.json`: live HTML, CSS, JS modules, service worker, and favicon match the tested local files byte-for-byte. |
 
 Environment: Linux container, Node.js v24.19.0, Playwright 1.62.1, headless Chromium 153.0.8010.0. The browser executable was supplied through the temporary `@sparticuz/chromium` test dependency because the default browser download failed; that dependency is not part of the website. The agent-browser CLI daemon failed to start in this environment, so the functional and visual checks used Playwright directly. No system security settings were changed.
 
@@ -51,7 +52,13 @@ The browser commands used `BROWSER_EXECUTABLE` pointing to the temporary local C
 
 ## Publishing
 
-At initial repository inspection, GitHub reported `has_pages: false`. The current connection exposes repository writes but no Pages-setting mutation. The site is designed for `https://grubbiy.github.io/AteaCoWorker/`; `.github/workflows/pages.yml` publishes only `site/` after checks. Publication status must be updated from an actual deployment result. An intended URL is not evidence that the site is live.
+**Live: https://grubbiy.github.io/AteaCoWorker/**
+
+At initial repository inspection, GitHub reported `has_pages: false`. The first custom Actions deployment failed before Pages was enabled. Creating a dedicated `gh-pages` branch with only the website assets caused GitHub to enable native branch publishing. Repository visibility remains private; the website is public.
+
+Native [Pages run 36361826737](https://github.com/grubbiy/AteaCoWorker/actions/runs/36361826737) built and deployed commit `e079de0eb1c145f7b700775d20f77a08d1b0f588` successfully. Deployment logs report the exact live address above. After the initial propagation-time 404, the site returned HTTP 200. Published assets match the tested source files.
+
+The redundant custom deployment workflow was replaced with `.github/workflows/checks.yml`. Pages now uses GitHub's native `gh-pages` branch deployment. Future site edits must be mirrored from `site/` on main to the root of `gh-pages`; main-only documentation changes do not redeploy the site.
 
 ## Deliberate demo limitations
 
@@ -71,4 +78,4 @@ At initial repository inspection, GitHub reported `has_pages: false`. The curren
 
 ## Next action
 
-Verify the GitHub publication result and resolve any Pages configuration requirement. Then use the concept demo to gather feedback before authorizing desktop implementation.
+Use the live concept demo to gather hackathon feedback before authorizing desktop implementation. The requested concept website and repository documentation are complete; the actual application remains intentionally unbuilt.
